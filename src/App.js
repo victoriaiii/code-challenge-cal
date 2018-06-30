@@ -4,6 +4,10 @@ import './App.css';
 
 class App extends Component {
   render() {
+    const {calendarInfo} = this.props;
+    return (
+      <Calendar calendarInfo={calendarInfo} />
+    );
   }
 }
 
