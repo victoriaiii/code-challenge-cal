@@ -1,14 +1,16 @@
-import React, { Component } from 'react';
-import Calendar from "./components/calendar";
-import './App.css';
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import * as actionCreators from "./actions/createActions";
+import Cal from "./Cal"
 
-class App extends Component {
-  render() {
-    const {calendarInfo} = this.props;
-    return (
-      <Calendar calendarInfo={calendarInfo} />
-    );
+const mapStateToProps = (state) => {
+  return{
+    calendarInfo: state.Calendar
   }
 }
+
+const mapDispatchToProps = (dispatch) => bindActionCreators(actionCreators, dispatch);
+
+const App = connect(mapStateToProps, mapDispatchToProps)(Main);
 
 export default App;
