@@ -18,7 +18,7 @@ export const nextMonth = (month) => {
 
 export const previousMonth = (month) => {
   return {
-    type NEXT_MONTH,
+    type: NEXT_MONTH,
     month
   }
 };
